@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نام سایت من</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- نوار بالا: لوگو، زبونه‌ها، جستجو -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo">ل</div>
+      <span class="brand-name">نام سایت من</span>
+    </div>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-page="home">خانه</button>
+      <button class="tab" data-page="about">درباره‌ی ما</button>
+      <button class="tab" data-page="services">خدمات</button>
+      <button class="tab" data-page="contact">تماس با ما</button>
+      <button class="tab" data-page="account">حساب کاربری</button>
+    </nav>
+
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="🔍 جستجو...">
+      <div id="searchResults" class="search-results hidden"></div>
+    </div>
+
+    <button id="themeBtn" class="icon-btn">🌙</button>
+  </header>
+
+  <main>
+
+    <!-- زبونه ۱: خانه -->
+    <section class="page" id="home">
+      <div class="hero">
+        <h1>به سایت من خوش اومدی</h1>
+        <p>اینجا یه متن کوتاه درباره‌ی سایتت می‌نویسی. این بخش رو هر جور خواستی عوض کن.</p>
+        <button class="cta" data-go="contact">تماس با ما</button>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>ویژگی اول</h3>
+          <p>یه توضیح کوتاه اینجا بنویس.</p>
+        </div>
+        <div class="card">
+          <h3>ویژگی دوم</h3>
+          <p>یه توضیح کوتاه اینجا بنویس.</p>
+        </div>
+        <div class="card">
+          <h3>ویژگی سوم</h3>
+          <p>یه توضیح کوتاه اینجا بنویس.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- زبونه ۲: درباره‌ی ما -->
+    <section class="page hidden" id="about">
+      <div class="box">
+        <h2>درباره‌ی ما</h2>
+        <p>اینجا داستان یا معرفی خودت یا گروهت رو می‌نویسی. چند خط کافیه.</p>
+        <p>می‌تونی چند پاراگراف دیگه هم اضافه کنی.</p>
+      </div>
+    </section>
+
+    <!-- زبونه ۳: خدمات -->
+    <section class="page hidden" id="services">
+      <div class="box">
+        <h2>خدمات</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>خدمت اول</h3>
+            <p>توضیح خدمت اول.</p>
+          </div>
+          <div class="card">
+            <h3>خدمت دوم</h3>
+            <p>توضیح خدمت دوم.</p>
+          </div>
+          <div class="card">
+            <h3>خدمت سوم</h3>
+            <p>توضیح خدمت سوم.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- زبونه ۴: تماس با ما -->
+    <section class="page hidden" id="contact">
+      <div class="box narrow">
+        <h2>تماس با ما</h2>
+        <p>پیامت رو بنویس. (این فرم فقط نمونه‌ست و جایی نمی‌فرسته.)</p>
+        <input type="text" id="contactName" placeholder="اسم شما">
+        <input type="text" id="contactEmail" placeholder="ایمیل یا شماره">
+        <textarea id="contactMsg" rows="4" placeholder="پیام شما..."></textarea>
+        <button id="contactBtn" class="wide">ارسال</button>
+        <p id="contactResult"></p>
+        <hr>
+        <p class="info">📧 ایمیل: example@email.com</p>
+        <p class="info">📞 تلفن: ۰۹۱۲۰۰۰۰۰۰۰</p>
+      </div>
+    </section>
+
+    <!-- زبونه ۵: حساب کاربری -->
+    <section class="page hidden" id="account">
+
+      <!-- ثبت‌نام و ورود -->
+      <div class="box narrow" id="authBox">
+        <h2 id="authTitle">ورود</h2>
+        <input type="text" id="usernameInput" placeholder="نام کاربری">
+        <input type="password" id="passwordInput" placeholder="رمز عبور (رمز واقعی نزن!)">
+        <button id="authBtn" class="wide">ورود</button>
+        <p id="authMsg"></p>
+        <p class="switch">
+          <span id="switchText">حساب نداری؟</span>
+          <a href="#" id="switchLink">ثبت‌نام کن</a>
+        </p>
+      </div>
+
+      <!-- پنل شخصی بعد از ورود -->
+      <div class="profile hidden" id="profileBox">
+
+        <div class="profile-head">
+          <div class="avatar" id="avatar">؟</div>
+          <div class="profile-info">
+            <h2 id="welcome"></h2>
+
+<p id="memberSince"></p>
+          </div>
+          <button id="logoutBtn" class="red small">خروج</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><span id="statAll">0</span><p>کل کارها</p></div>
+          <div class="stat"><span id="statDone">0</span><p>انجام‌شده</p></div>
+          <div class="stat"><span id="statLeft">0</span><p>باقی‌مونده</p></div>
+        </div>
+
+        <div class="box">
+          <h3>معرفی من</h3>
+          <textarea id="bioInput" rows="3" placeholder="یه چیزی درباره‌ی خودت بنویس..."></textarea>
+          <button id="saveBioBtn" class="wide">ذخیره‌ی معرفی</button>
+          <p id="bioMsg"></p>
+        </div>
+
+        <div class="box">
+          <h3>کارهای من</h3>
+          <div class="task-row">
+            <input type="text" id="taskInput" placeholder="یه کار جدید بنویس...">
+            <button id="addTaskBtn">اضافه</button>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© نام سایت من. همه‌ی حقوق برای من محفوظه.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

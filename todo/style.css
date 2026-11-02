@@ -1,0 +1,570 @@
+* {
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f6f4ff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #7c5cf0;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+button:hover {
+  background: #6847e0;
+  transform: scale(1.03);
+}
+
+button.wide {
+  width: 100%;
+}
+
+button.red {
+  background: #ef6b6b;
+}
+
+button.red:hover {
+  background: #e35252;
+}
+
+button.small {
+  padding: 7px 14px;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 10px;
+  border: 2px solid #e3dcf7;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+  color: #333;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #7c5cf0;
+}
+
+/* نوار بالا */
+.navbar {
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7c5cf0, #f78fb3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5b4b8a;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: transparent;
+  color: #5b4b8a;
+  padding: 8px 14px;
+}
+
+.tab:hover {
+  background: #efeaff;
+  transform: none;
+}
+
+.tab.active {
+  background: #7c5cf0;
+  color: white;
+}
+
+.icon-btn {
+  background: #efeaff;
+  color: #5b4b8a;
+  padding: 8px 12px;
+  font-size: 17px;
+}
+
+.icon-btn:hover {
+  background: #e3d9ff;
+}
+
+/* جستجو */
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 160px;
+  max-width: 260px;
+}
+
+.search-wrap input {
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 20px;
+  background: #f4f0ff;
+}
+
+.search-results {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  left: 0;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.result-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0ecff;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item:hover {
+  background: #f4f0ff;
+}
+
+.result-item b {
+  display: block;
+  color: #5b4b8a;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.result-item span {
+  color: #666;
+  font-size: 13px;
+}
+
+.result-item mark {
+  background: #ffe28a;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.no-result {
+  padding: 12px 14px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* محتوای صفحه‌ها */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #ffd1dc, #c9e4ff);
+  border-radius: 24px;
+  padding: 50px 20px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  color: #4a3b7a;
+}
+
+.hero p {
+  color: #555;
+  max-width: 480px;
+  margin: 0 auto 20px;
+  line-height: 1.9;
+}
+
+.cta {
+  padding: 12px 26px;
+  font-size: 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  border-top: 5px solid #7c5cf0;
+}
+
+.card:nth-child(2) {
+  border-top-color: #f78fb3;
+}
+
+.card:nth-child(3) {
+  border-top-color: #5ec4a0;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #5b4b8a;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.box {
+  background: white;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+.box.narrow {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.box h2,
+.box h3 {
+  margin-top: 0;
+  color: #5b4b8a;
+}
+
+.box p {
+  line-height: 1.
+
+9;
+  color: #555;
+}
+
+.info {
+  margin: 6px 0;
+}
+
+#authMsg,
+#bioMsg,
+#contactResult {
+  text-align: center;
+  min-height: 18px;
+  font-size: 14px;
+  color: #e0507a;
+}
+
+.switch {
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch a {
+  color: #7c5cf0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 16px 0;
+}
+
+/* پنل شخصی */
+.profile {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.profile .box {
+  margin-top: 16px;
+}
+
+.profile-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #ffd1dc, #c9e4ff);
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c5cf0, #f78fb3);
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 4px solid white;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  margin: 0 0 4px;
+  color: #4a3b7a;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.stat {
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  padding: 14px 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+.stat span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #7c5cf0;
+}
+
+.stat p {
+  margin: 4px 0 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.task-row {
+  display: flex;
+  gap: 8px;
+}
+
+.task-row input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+}
+
+#taskList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #faf8ff;
+  border-radius: 12px;
+  border-right: 5px solid #7c5cf0;
+  cursor: pointer;
+  color: #444;
+}
+
+#taskList li.done span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+#taskList li button {
+  background: #ef6b6b;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  color: #888;
+  font-size: 14px;
+  background: white;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+  .tab {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .profile-head {
+    flex-wrap: wrap;
+  }
+}
+
+/* حالت شب */
+body.dark {
+  background: #14152a;
+  color: #e8e8f0;
+}
+
+body.dark .navbar,
+body.dark .footer,
+body.dark .box,
+body.dark .card,
+body.dark .stat {
+  background: #212539;
+}
+
+body.dark .brand-name,
+body.dark .box h2,
+body.dark .box h3,
+body.dark .card h3,
+body.dark .tab {
+  color: #e3d9ff;
+}
+
+body.dark .tab.active {
+  background: #7c5cf0;
+  color: white;
+}
+
+body.dark .tab:hover {
+  background: #2e3350;
+}
+
+body.dark .box p,
+body.dark .card p,
+body.dark .footer,
+body.dark .stat p {
+  color: #c8c8d8;
+}
+
+body.dark .hero,
+body.dark .profile-head {
+  background: linear-gradient(135deg, #2b2450, #1d3557);
+}
+
+body.dark .hero h1,
+body.dark .profile-info h2 {
+  color: #f1ebff;
+}
+
+body.dark .hero p,
+body.dark .profile-info p {
+  color: #d0d0e0;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #2e3350;
+  color: #eee;
+  border-color: #444;
+}
+
+body.dark .icon-btn {
+  background: #2e3350;
+  color: #eee;
+}
+
+body.dark hr {
+  border-top-color: #333;
+}
+
+body.dark .stat span {
+  color: #c3b2ff;
+}
+
+body.dark #taskList li {
+  background: #2e3350;
+  color: #eee;
+}
+
+body.dark .search-wrap input {
+  background: #2e3350;
+}
+
+body.dark .search-results {
+  background: #2a2f47;
+}
+
+body.dark .result-item {
+  border-bottom-color: #3a4060;
+}
+
+body.dark .result-item:hover {
+  background: #343a58;
+}
+
+body.dark .result-item b {
+  color: #e3d9ff;
+}
+
+body.dark .result-item span,
+body.dark .no-result {
+  color: #c8c8d8;
+}
